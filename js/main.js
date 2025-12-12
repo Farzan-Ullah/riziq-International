@@ -139,8 +139,10 @@ function handleApplyForm(event) {
     const application = {
         id: Date.now(),
         fullName: data.fullName,
-        phone: data.phone,
+        phone: data.phone, // WhatsApp Number
         email: data.email,
+        age: data.age,
+        height: data.height,
         qualification: data.qualification,
         experience: data.experience,
         country: data.country,
