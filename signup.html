@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Riziq International</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/premium-effects.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+    <link rel="stylesheet" href="css/desktop-enhancements.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Reusing Login Page Styles for Consistency */
+        body.signup-page {
+            background: linear-gradient(135deg, #00b894 0%, #0984e3 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        /* Animated Background Shapes */
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.2);
+            top: -100px;
+            right: -100px;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 206, 201, 0.3);
+            bottom: -50px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+
+        /* Glass Signup Card */
+        .signup-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+            margin: 2rem 0;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 25px rgba(9, 132, 227, 0.2);
+        }
+
+        .login-logo img {
+            width: 50px;
+        }
+
+        .login-title {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .login-subtitle {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            z-index: 10;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem 0.875rem 2.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .form-control:focus {
+            border-color: #00b894;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.1);
+            outline: none;
+        }
+
+        .btn-signup {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #00b894 0%, #0984e3 100%);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 184, 148, 0.2);
+            margin-top: 1rem;
+        }
+
+        .btn-signup:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 184, 148, 0.3);
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .register-link {
+            color: #00b894;
+            font-weight: 700;
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .signup-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="signup-page">
+
+    <!-- Background Shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+
+    <div class="signup-card">
+        <div class="login-header">
+            <a href="index.html" class="login-logo">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+            <h1 class="login-title">Create Account</h1>
+            <p class="login-subtitle">Join us to start your global career journey</p>
+        </div>
+
+        <form id="signupForm" onsubmit="handleSignup(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label class="form-label">First Name</label>
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" class="form-control" placeholder="John" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Last Name</label>
+                    <div class="input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" class="form-control" placeholder="Doe" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <div class="input-group">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" class="form-control" placeholder="name@example.com" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <div class="input-group">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" class="form-control" placeholder="+91 9876543210" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" class="form-control" placeholder="Create password" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Confirm Password</label>
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" class="form-control" placeholder="Confirm password" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-signup">
+                Create Account <i class="fas fa-user-plus" style="margin-left: 8px;"></i>
+            </button>
+        </form>
+
+        <div class="login-footer">
+            Already have an account? <a href="login.html" class="register-link">Sign In</a>
+        </div>
+    </div>
+
+    <script>
+        function handleSignup(e) {
+            e.preventDefault();
+            const btn = document.querySelector('.btn-signup');
+
+            // Loading state
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Creating account...';
+            btn.style.opacity = '0.8';
+
+            // Simulate API call
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Account Created!';
+                btn.style.background = '#00b894';
+
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1500);
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

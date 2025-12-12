@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Browse latest overseas job opportunities in Europe and Gulf countries. Search and filter jobs by country and skill level.">
+    <title>Job Listings - Riziq International</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/premium-effects.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+    <link rel="stylesheet" href="css/jobs-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="jobs-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Riziq International Logo" class="logo-img">
+                    <span>Riziq International</span>
+                </a>
+
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="apply.html" class="btn btn-primary">Apply Now</a></li>
+                </ul>
+
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Current Job Openings</h1>
+            <p>Explore exciting opportunities across Europe and Gulf countries</p>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="job-search-section">
+        <div class="container">
+            <div class="search-filters">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="jobSearch" placeholder="Search by job title, country, or skill..."
+                        onkeyup="filterJobs()">
+                </div>
+
+                <div class="filter-group">
+                    <select id="countryFilter" class="form-control" onchange="filterJobs()">
+                        <option value="">All Countries</option>
+                        <option value="uae">UAE</option>
+                        <option value="saudi">Saudi Arabia</option>
+                        <option value="qatar">Qatar</option>
+                        <option value="kuwait">Kuwait</option>
+                        <option value="oman">Oman</option>
+                        <option value="germany">Germany</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="poland">Poland</option>
+                    </select>
+
+                    <select id="skillFilter" class="form-control" onchange="filterJobs()">
+                        <option value="">All Skills</option>
+                        <option value="skilled">Skilled</option>
+                        <option value="unskilled">Unskilled</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Listing -->
+    <section class="jobs-listing">
+        <div class="container">
+            <div class="jobs-grid">
+                <!-- Job Card 1 -->
+                <div class="job-card card">
+                    <div class="job-header">
+                        <div class="job-flag">🇦🇪</div>
+                        <div class="job-badge">Skilled</div>
+                    </div>
+                    <h3 class="job-title">Civil Engineer</h3>
+                    <p class="job-country">UAE - Dubai</p>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>AED 8,000 - 12,000/month</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>3+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="job-requirements">
+                        <strong>Requirements:</strong> Bachelor's degree in Civil Engineering, AutoCAD proficiency, site
+                        management experience
+                    </div>
+                    <button onclick="window.location.href='apply.html'" class="btn btn-primary btn-block">Apply
+                        Now</button>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="job-card card">
+                    <div class="job-header">
+                        <div class="job-flag">🇸🇦</div>
+                        <div class="job-badge">Skilled</div>
+                    </div>
+                    <h3 class="job-title">Registered Nurse</h3>
+                    <p class="job-country">Saudi Arabia - Riyadh</p>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>SAR 6,000 - 9,000/month</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>2+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="job-requirements">
+                        <strong>Requirements:</strong> Nursing degree, valid license, ICU/ER experience preferred,
+                        English proficiency
+                    </div>
+                    <button onclick="window.location.href='apply.html'" class="btn btn-primary btn-block">Apply
+                        Now</button>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="job-card card">
+                    <div class="job-header">
+                        <div class="job-flag">🇩🇪</div>
+                        <div class="job-badge">Skilled</div>
+                    </div>
+                    <h3 class="job-title">Software Developer</h3>
+                    <p class="job-country">Germany - Berlin</p>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>€4,500 - 6,500/month</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>2+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="job-requirements">
+                        <strong>Requirements:</strong> JavaScript, React, Node.js, English & German (B1 level), EU Blue
+                        Card eligible
+                    </div>
+                    <button onclick="window.location.href='apply.html'" class="btn btn-primary btn-block">Apply
+                        Now</button>
+                </div>
+
+                <!-- Job Card 4 -->
+                <div class="job-card card">
+                    <div class="job-header">
+                        <div class="job-flag">🇶🇦</div>
+                        <div class="job-badge">Unskilled</div>
+                    </div>
+                    <h3 class="job-title">Construction Worker</h3>
+                    <p class="job-country">Qatar - Doha</p>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>QAR 1,200 - 1,800/month</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>No experience required</span>
+                        </div>
+                    </div>
+                    <div class="job-requirements">
+                        <strong>Requirements:</strong> Physically fit, willing to work outdoors, basic safety training
+                        provided
+                    </div>
+                    <button onclick="window.location.href='apply.html'" class="btn btn-primary btn-block">Apply
+                        Now</button>
+                </div>
+
+                <!-- Job Card 5 -->
+                <div class="job-card card">
+                    <div class="job-header">
+                        <div class="job-flag">🇦🇪</div>
+                        <div class="job-badge">Skilled</div>
+                    </div>
+                    <h3 class="job-title">Accountant</h3>
+                    <p class="job-country">UAE - Abu Dhabi</p>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>AED 7,000 - 10,000/month</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>3+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="job-requirements">
+                        <strong>Requirements:</strong> CA/CPA certification, Tally/QuickBooks, financial reporting
+                        experience
+                    </div>
+                    <button onclick="window.location.href='apply.html'" class="btn btn-primary btn-block">Apply
+                        Now</button>
+                </div>
+
+                <!-- Job Card 6 -->
+                <div class="job-card card">
+                    <div class="job-header">
+                        <div class="job-flag">🇰🇼</div>
+                        <div class="job-badge">Unskilled</div>
+                    </div>
+                    <h3 class="job-title">Warehouse Worker</h3>
+                    <p class="job-country">Kuwait - Kuwait City</p>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>KWD 150 - 220/month</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>No experience required</span>
+                        </div>
+                    </div>
+                    <div class="job-requirements">
+                        <strong>Requirements:</strong> Physically fit, basic English, forklift training provided
+                    </div>
+                    <button onclick="window.location.href='apply.html'" class="btn btn-primary btn-block">Apply
+                        Now</button>
+                </div>
+
+                <!-- Job Card 7 -->
+                <div class="job-card card">
+                    <div class="job-header">
+                        <div class="job-flag">🇬🇧</div>
+                        <div class="job-badge">Skilled</div>
+                    </div>
+                    <h3 class="job-title">Chef</h3>
+                    <p class="job-country">United Kingdom - London</p>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>£2,500 - 3,500/month</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>5+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="job-requirements">
+                        <strong>Requirements:</strong> Culinary degree, multi-cuisine expertise, hotel/restaurant
+                        experience
+                    </div>
+                    <button onclick="window.location.href='apply.html'" class="btn btn-primary btn-block">Apply
+                        Now</button>
+                </div>
+
+                <!-- Job Card 8 -->
+                <div class="job-card card">
+                    <div class="job-header">
+                        <div class="job-flag">🇴🇲</div>
+                        <div class="job-badge">Skilled</div>
+                    </div>
+                    <h3 class="job-title">Electrical Engineer</h3>
+                    <p class="job-country">Oman - Muscat</p>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>OMR 600 - 900/month</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>3+ years experience</span>
+                        </div>
+                    </div>
+                    <div class="job-requirements">
+                        <strong>Requirements:</strong> Electrical engineering degree, PLC programming, industrial
+                        experience
+                    </div>
+                    <button onclick="window.location.href='apply.html'" class="btn btn-primary btn-block">Apply
+                        Now</button>
+                </div>
+
+                <!-- Job Card 9 -->
+                <div class="job-card card">
+                    <div class="job-header">
+                        <div class="job-flag">🇵🇱</div>
+                        <div class="job-badge">Unskilled</div>
+                    </div>
+                    <h3 class="job-title">Factory Worker</h3>
+                    <p class="job-country">Poland - Warsaw</p>
+                    <div class="job-details">
+                        <div class="detail-item">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span>PLN 4,500 - 6,000/month</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>No experience required</span>
+                        </div>
+                    </div>
+                    <div class="job-requirements">
+                        <strong>Requirements:</strong> Physically fit, willing to work shifts, basic training provided
+                    </div>
+                    <button onclick="window.location.href='apply.html'" class="btn btn-primary btn-block">Apply
+                        Now</button>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <p class="job-count">Showing 9 job opportunities</p>
+                <p style="color: var(--text-light); margin-top: var(--spacing-sm);">
+                    Can't find the right job? <a href="apply.html"
+                        style="color: var(--primary-color); font-weight: 600;">Submit your profile</a> and we'll match
+                    you with suitable opportunities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Don't See Your Dream Job?</h2>
+                <p>Register with us and we'll notify you when matching opportunities become available</p>
+                <div class="cta-buttons">
+                    <a href="apply.html" class="btn btn-accent">Register Now</a>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Riziq International</h3>
+                    <p>Your trusted partner for overseas employment opportunities. We connect talent with global
+                        opportunities.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="jobs.html">Job Listings</a></li>
+                        <li><a href="apply.html">Apply Now</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#recruitment">Overseas Recruitment</a></li>
+                        <li><a href="services.html#cv">CV Making</a></li>
+                        <li><a href="services.html#interview">Interview Coaching</a></li>
+                        <li><a href="services.html#visa">Visa Guidance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Pulwama, Kashmir</p>
+                    <p><i class="fas fa-phone"></i> +91 7006001199</p>
+                    <p><i class="fas fa-envelope"></i> info@riziqinternational.com</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +91 7006505391</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Riziq International. All rights reserved.</p>
+                <div>
+                    <a href="#" style="margin: 0 10px;">Privacy Policy</a> |
+                    <a href="#" style="margin: 0 10px;">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Sticky Button -->
+    <div class="whatsapp-sticky" onclick="openWhatsApp()">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M16 0C7.164 0 0 7.164 0 16c0 2.825.738 5.48 2.028 7.784L.698 30.5l7.032-1.842A15.923 15.923 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.547 0-4.96-.707-7.013-1.933l-.503-.302-5.213 1.367 1.39-5.08-.33-.52A13.267 13.267 0 012.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.293-9.98c-.4-.2-2.367-1.167-2.733-1.3-.367-.133-.633-.2-.9.2-.267.4-1.033 1.3-1.267 1.567-.233.267-.467.3-.867.1-.4-.2-1.687-.622-3.213-1.982-1.187-1.06-1.99-2.367-2.223-2.767-.233-.4-.025-.617.175-.817.18-.18.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.325-.78-.655-.674-.9-.687-.233-.012-.5-.015-.767-.015s-.7.1-1.067.5c-.367.4-1.4 1.367-1.4 3.333s1.433 3.867 1.633 4.133c.2.267 2.82 4.307 6.833 6.04.955.413 1.7.66 2.28.845.96.305 1.833.262 2.523.159.77-.115 2.367-.967 2.7-1.9.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z" />
+        </svg>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/mobile.js"></script>
+</body>
+
+</html>

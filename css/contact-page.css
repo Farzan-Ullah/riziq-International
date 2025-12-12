@@ -1,0 +1,270 @@
+/* ========================================
+   CONTACT PAGE - UNIQUE DESIGN
+   Purple/Indigo Gradient Theme
+   ======================================== */
+
+/* Contact Page Color Scheme */
+.contact-page {
+    --contact-primary: #8e44ad;
+    --contact-secondary: #9b59b6;
+    --contact-accent: #3498db;
+    --contact-gradient: linear-gradient(135deg, #8e44ad 0%, #9b59b6 50%, #3498db 100%);
+    --contact-gradient-light: linear-gradient(135deg, rgba(142, 68, 173, 0.1) 0%, rgba(155, 89, 182, 0.1) 100%);
+}
+
+/* Contact Page Header */
+.contact-page .page-header {
+    background: var(--contact-gradient);
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 6rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.contact-page .page-header::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 15s infinite ease-in-out;
+}
+
+.contact-page .page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    right: -5%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float 20s infinite ease-in-out reverse;
+}
+
+.contact-page .page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.contact-page .page-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    z-index: 2;
+}
+
+/* Contact Section Layout */
+.contact-section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* Contact Info Side */
+.contact-info {
+    background: white;
+    padding: 3rem;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 15px 40px rgba(142, 68, 173, 0.15);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.contact-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--contact-gradient);
+}
+
+.contact-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(142, 68, 173, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    background: var(--contact-gradient-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--contact-primary);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+    background: var(--contact-gradient);
+    color: white;
+    transform: rotate(360deg);
+}
+
+.contact-details h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.contact-details p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Contact Form Side */
+.contact-form-wrapper {
+    background: white;
+    padding: 3.5rem;
+    border-radius: var(--radius-2xl);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 1px solid rgba(142, 68, 173, 0.1);
+}
+
+.contact-form-wrapper h2 {
+    background: var(--contact-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2.2rem;
+}
+
+.form-input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid #f0f0f0;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.form-control:focus {
+    border-color: var(--contact-primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(142, 68, 173, 0.1);
+    outline: none;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.btn-primary {
+    background: var(--contact-gradient);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(142, 68, 173, 0.3);
+}
+
+/* Map Section */
+.map-section {
+    padding-bottom: 5rem;
+}
+
+.map-container {
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border: 5px solid white;
+    height: 450px;
+    position: relative;
+}
+
+.map-container::before {
+    content: 'Our Location';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    color: var(--contact-primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-page .page-header {
+        clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+        padding-bottom: 4rem;
+    }
+
+    .contact-page .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .contact-info,
+    .contact-form-wrapper {
+        padding: 2rem;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .contact-item:hover {
+        transform: translateY(-5px);
+    }
+}

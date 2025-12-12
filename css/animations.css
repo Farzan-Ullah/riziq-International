@@ -1,0 +1,690 @@
+/* ========================================
+   ADVANCED ANIMATIONS & EFFECTS
+   ======================================== */
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(30, 64, 175, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(30, 64, 175, 0.8), 0 0 30px rgba(30, 64, 175, 0.6);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    10%,
+    30% {
+        transform: scale(0.9);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: scale(1.1);
+    }
+
+    50%,
+    70% {
+        transform: scale(1.05);
+    }
+}
+
+/* Animation Classes */
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fadeInDown {
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.animate-fadeInLeft {
+    animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fadeInRight {
+    animation: fadeInRight 0.6s ease-out;
+}
+
+.animate-scaleIn {
+    animation: scaleIn 0.5s ease-out;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Stagger Animation Delays */
+.animate-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.animate-delay-2 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-3 {
+    animation-delay: 0.3s;
+}
+
+.animate-delay-4 {
+    animation-delay: 0.4s;
+}
+
+.animate-delay-5 {
+    animation-delay: 0.5s;
+}
+
+.animate-delay-6 {
+    animation-delay: 0.6s;
+}
+
+/* Hero Section Animations */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    animation: shimmer 3s infinite linear;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 100%);
+    background-size: 1000px 100%;
+}
+
+.hero-title {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.hero-subtitle {
+    animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.hero-description {
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.hero-buttons {
+    animation: fadeInUp 0.8s ease-out 0.6s backwards;
+}
+
+/* Card Hover Effects */
+.card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Button Animations */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Icon Animations */
+.card-icon,
+.feature-icon,
+.service-icon,
+.contact-icon,
+.step-icon {
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon,
+.feature-card:hover .feature-icon {
+    animation: heartbeat 1s ease-in-out;
+}
+
+/* Stats Counter Animation */
+.stat-card {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.stat-icon {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.2) rotate(360deg);
+    transition: transform 0.6s ease;
+}
+
+/* Testimonial Card Animation */
+.testimonial-card {
+    transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px) rotate(1deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-rating i {
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover .testimonial-rating i {
+    animation: bounce 0.6s ease;
+}
+
+.testimonial-card:hover .testimonial-rating i:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.testimonial-card:hover .testimonial-rating i:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.testimonial-card:hover .testimonial-rating i:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.testimonial-card:hover .testimonial-rating i:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.testimonial-card:hover .testimonial-rating i:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+/* Job Card Animations */
+.job-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.job-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
+}
+
+.job-flag {
+    transition: all 0.3s ease;
+}
+
+.job-card:hover .job-flag {
+    transform: scale(1.3) rotate(10deg);
+    animation: bounce 0.6s ease;
+}
+
+.job-badge {
+    transition: all 0.3s ease;
+}
+
+.job-card:hover .job-badge {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(30, 64, 175, 0.3);
+}
+
+/* Form Input Animations */
+.form-control {
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(30, 64, 175, 0.15);
+}
+
+/* FAQ Accordion Animation */
+.faq-item {
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    transform: translateX(5px);
+    border-left: 4px solid var(--primary-color);
+}
+
+.faq-question {
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-question {
+    color: var(--primary-color);
+}
+
+.faq-question::after {
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(180deg);
+}
+
+/* Navigation Animation */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Logo Animation */
+.logo {
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-img {
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: rotate(360deg);
+    transition: transform 0.6s ease;
+}
+
+/* Footer Links Animation */
+.footer-links a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.footer-links a::before {
+    content: '→';
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    left: -15px;
+    opacity: 1;
+}
+
+.footer-links a:hover {
+    transform: translateX(5px);
+}
+
+/* Social Links Animation */
+.social-link {
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px) rotate(360deg);
+    box-shadow: 0 8px 16px rgba(30, 64, 175, 0.3);
+}
+
+/* Process Steps Animation */
+.step-item {
+    transition: all 0.4s ease;
+}
+
+.step-item:hover {
+    transform: scale(1.05);
+}
+
+.step-item:hover .step-icon {
+    animation: rotate 1s ease-in-out;
+}
+
+.step-number {
+    transition: all 0.3s ease;
+}
+
+.step-item:hover .step-number {
+    transform: translateX(-50%) scale(1.2);
+    animation: glow 1s ease-in-out infinite;
+}
+
+/* Page Header Animation */
+.page-header {
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: float 20s linear infinite;
+}
+
+.page-header h1 {
+    animation: fadeInDown 0.6s ease-out;
+}
+
+.page-header p {
+    animation: fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+/* Search Box Animation */
+.search-box input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.2);
+}
+
+/* Service Image Hover */
+.service-image {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.service-image img {
+    transition: all 0.5s ease;
+}
+
+.service-image:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* About Image Hover */
+.about-image {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.about-image img {
+    transition: all 0.5s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* Value Item Animation */
+.value-item {
+    transition: all 0.4s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-left-width: 6px;
+}
+
+.value-number {
+    transition: all 0.3s ease;
+}
+
+.value-item:hover .value-number {
+    opacity: 0.6;
+    transform: scale(1.2);
+}
+
+/* Loading Animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
+
+/* Scroll Reveal Animation */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+
+    /* Reduce animation intensity on mobile */
+    .card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+
+    .job-card:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Faster animations on mobile */
+    .animate-fadeInUp,
+    .animate-fadeInDown,
+    .animate-fadeInLeft,
+    .animate-fadeInRight {
+        animation-duration: 0.4s;
+    }
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

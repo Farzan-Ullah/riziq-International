@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stay updated with latest job opportunities, application updates, and important announcements from Riziq International.">
+    <title>Notifications - Riziq International</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/blog-notifications.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/premium-effects.css">
+    <link rel="stylesheet" href="css/mobile-responsive.css">
+    <link rel="stylesheet" href="css/remaining-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="notifications-page">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Riziq International Logo" class="logo-img">
+                    <span>Riziq International</span>
+                </a>
+
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li><a href="faq.html" class="nav-link">FAQ</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="apply.html" class="btn btn-primary">Apply Now</a></li>
+                </ul>
+
+                <div class="mobile-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Notifications</h1>
+            <p>Stay updated with latest opportunities and announcements</p>
+        </div>
+    </section>
+
+    <!-- Notification Stats -->
+    <section style="background: var(--bg-light); padding: var(--spacing-lg) 0;">
+        <div class="container">
+            <div class="grid grid-4">
+                <div class="notification-stat scroll-reveal">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">New Job Openings</div>
+                </div>
+
+                <div class="notification-stat scroll-reveal">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Interviews Scheduled</div>
+                </div>
+
+                <div class="notification-stat scroll-reveal">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Applications Approved</div>
+                </div>
+
+                <div class="notification-stat scroll-reveal">
+                    <div class="stat-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Important Updates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notifications List -->
+    <section class="notifications-section">
+        <div class="container">
+            <div class="notifications-header">
+                <h2>Recent Notifications</h2>
+                <div class="notification-filters">
+                    <button class="filter-btn active" onclick="filterNotifications('all')">All</button>
+                    <button class="filter-btn" onclick="filterNotifications('jobs')">Jobs</button>
+                    <button class="filter-btn" onclick="filterNotifications('updates')">Updates</button>
+                    <button class="filter-btn" onclick="filterNotifications('interviews')">Interviews</button>
+                </div>
+            </div>
+
+            <div class="notifications-list">
+                <!-- Notification 1 - New Job -->
+                <div class="notification-item scroll-reveal new" data-category="jobs">
+                    <div class="notification-icon job">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h4>New Job Opening: Software Developer in Germany</h4>
+                            <span class="notification-badge new-badge">New</span>
+                        </div>
+                        <p>Exciting opportunity for experienced software developers in Berlin. Salary: €4,500 -
+                            6,500/month. Apply now!</p>
+                        <div class="notification-footer">
+                            <span class="notification-time"><i class="fas fa-clock"></i> 2 hours ago</span>
+                            <a href="jobs.html" class="notification-action">View Job <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 2 - Interview -->
+                <div class="notification-item scroll-reveal new" data-category="interviews">
+                    <div class="notification-icon interview">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h4>Interview Scheduled for Civil Engineer Position - UAE</h4>
+                            <span class="notification-badge new-badge">New</span>
+                        </div>
+                        <p>Your video interview has been scheduled for December 15, 2024 at 10:00 AM. Please check your
+                            email for meeting details.</p>
+                        <div class="notification-footer">
+                            <span class="notification-time"><i class="fas fa-clock"></i> 5 hours ago</span>
+                            <a href="#" class="notification-action">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 3 - Application Update -->
+                <div class="notification-item scroll-reveal" data-category="updates">
+                    <div class="notification-icon update">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h4>Application Status Updated</h4>
+                        </div>
+                        <p>Your application for Accountant position in Abu Dhabi has been shortlisted. Our team will
+                            contact you soon.</p>
+                        <div class="notification-footer">
+                            <span class="notification-time"><i class="fas fa-clock"></i> 1 day ago</span>
+                            <a href="#" class="notification-action">Check Status <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 4 - New Jobs -->
+                <div class="notification-item scroll-reveal" data-category="jobs">
+                    <div class="notification-icon job">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h4>5 New Nursing Positions Available in Saudi Arabia</h4>
+                        </div>
+                        <p>Multiple openings for registered nurses in Riyadh and Jeddah. Competitive salaries and
+                            benefits package.</p>
+                        <div class="notification-footer">
+                            <span class="notification-time"><i class="fas fa-clock"></i> 2 days ago</span>
+                            <a href="jobs.html" class="notification-action">Browse Jobs <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 5 - Important Update -->
+                <div class="notification-item scroll-reveal" data-category="updates">
+                    <div class="notification-icon important">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h4>Important: Updated Visa Requirements for UAE</h4>
+                        </div>
+                        <p>New documentation requirements for UAE work visas effective from January 2025. Please review
+                            the updated guidelines.</p>
+                        <div class="notification-footer">
+                            <span class="notification-time"><i class="fas fa-clock"></i> 3 days ago</span>
+                            <a href="blog.html" class="notification-action">Read More <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 6 - Success Story -->
+                <div class="notification-item scroll-reveal" data-category="updates">
+                    <div class="notification-icon success">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h4>Success Story: 10 Candidates Placed This Week</h4>
+                        </div>
+                        <p>Congratulations to our candidates who secured positions in UAE, Saudi Arabia, and Qatar. Your
+                            success is our pride!</p>
+                        <div class="notification-footer">
+                            <span class="notification-time"><i class="fas fa-clock"></i> 4 days ago</span>
+                            <a href="testimonials.html" class="notification-action">Read Stories <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 7 - Workshop -->
+                <div class="notification-item scroll-reveal" data-category="updates">
+                    <div class="notification-icon event">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h4>Free CV Writing Workshop - December 20, 2024</h4>
+                        </div>
+                        <p>Join our expert-led workshop on creating professional CVs for international jobs. Limited
+                            seats available!</p>
+                        <div class="notification-footer">
+                            <span class="notification-time"><i class="fas fa-clock"></i> 5 days ago</span>
+                            <a href="contact.html" class="notification-action">Register Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification 8 - New Jobs -->
+                <div class="notification-item scroll-reveal" data-category="jobs">
+                    <div class="notification-icon job">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <h4>Construction Workers Needed in Qatar - Immediate Hiring</h4>
+                        </div>
+                        <p>Urgent requirement for 20 construction workers in Doha. Good salary package with
+                            accommodation provided.</p>
+                        <div class="notification-footer">
+                            <span class="notification-time"><i class="fas fa-clock"></i> 1 week ago</span>
+                            <a href="jobs.html" class="notification-action">Apply Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-3">
+                <button class="btn btn-outline">Load More Notifications</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Preferences -->
+    <section class="notification-preferences">
+        <div class="container">
+            <div class="preferences-box">
+                <h2><i class="fas fa-cog"></i> Notification Preferences</h2>
+                <p>Customize how you receive notifications from us</p>
+                <div class="preferences-grid">
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email Notifications</h4>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <i class="fab fa-whatsapp"></i>
+                            <h4>WhatsApp Updates</h4>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <i class="fas fa-sms"></i>
+                            <h4>SMS Alerts</h4>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="preference-item">
+                        <div class="preference-header">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>Job Alerts</h4>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Riziq International</h3>
+                    <p>Your trusted partner for overseas employment opportunities. We connect talent with global
+                        opportunities.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="jobs.html">Job Listings</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html#recruitment">Overseas Recruitment</a></li>
+                        <li><a href="services.html#cv">CV Making</a></li>
+                        <li><a href="services.html#interview">Interview Coaching</a></li>
+                        <li><a href="services.html#visa">Visa Guidance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Pulwama, Kashmir</p>
+                    <p><i class="fas fa-phone"></i> +91 7006505391</p>
+                    <p><i class="fas fa-envelope"></i> info@riziqinternational.com</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +91 7006505391</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Riziq International. All rights reserved.</p>
+                <div>
+                    <a href="#" style="margin: 0 10px;">Privacy Policy</a> |
+                    <a href="#" style="margin: 0 10px;">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Sticky Button -->
+    <div class="whatsapp-sticky" onclick="openWhatsApp()">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M16 0C7.164 0 0 7.164 0 16c0 2.825.738 5.48 2.028 7.784L.698 30.5l7.032-1.842A15.923 15.923 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.333c-2.547 0-4.96-.707-7.013-1.933l-.503-.302-5.213 1.367 1.39-5.08-.33-.52A13.267 13.267 0 012.667 16c0-7.364 5.97-13.333 13.333-13.333S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.293-9.98c-.4-.2-2.367-1.167-2.733-1.3-.367-.133-.633-.2-.9.2-.267.4-1.033 1.3-1.267 1.567-.233.267-.467.3-.867.1-.4-.2-1.687-.622-3.213-1.982-1.187-1.06-1.99-2.367-2.223-2.767-.233-.4-.025-.617.175-.817.18-.18.4-.467.6-.7.2-.233.267-.4.4-.667.133-.267.067-.5-.033-.7-.1-.2-.9-2.167-1.233-2.967-.325-.78-.655-.674-.9-.687-.233-.012-.5-.015-.767-.015s-.7.1-1.067.5c-.367.4-1.4 1.367-1.4 3.333s1.433 3.867 1.633 4.133c.2.267 2.82 4.307 6.833 6.04.955.413 1.7.66 2.28.845.96.305 1.833.262 2.523.159.77-.115 2.367-.967 2.7-1.9.333-.933.333-1.733.233-1.9-.1-.167-.367-.267-.767-.467z" />
+        </svg>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script>
+        // Filter notifications
+        function filterNotifications(category) {
+            const items = document.querySelectorAll('.notification-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'flex';
+                    item.style.animation = 'fadeInUp 0.5s ease-out';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,469 @@
+/* ========================================
+   EXTRA PREMIUM VISUAL EFFECTS
+   ======================================== */
+
+/* Enhanced Page Headers with Animated Backgrounds */
+.page-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: float 20s linear infinite;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s infinite;
+}
+
+/* Fancy Section Dividers */
+.section-divider {
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, var(--bg-light));
+    position: relative;
+    overflow: hidden;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gradient-primary), transparent);
+}
+
+/* Premium Card Enhancements */
+.card {
+    position: relative;
+    background: white;
+    overflow: hidden;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+/* Gradient Text Effects */
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.gradient-text-accent {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+.gradient-text-success {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Enhanced Section Titles */
+.section-title h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+/* Fancy Stat Cards */
+.stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat-card:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced Job Cards */
+.job-card {
+    background: white;
+    border: 1px solid rgba(102, 126, 234, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.job-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--gradient-primary);
+    transition: height 0.3s ease;
+}
+
+.job-card:hover::before {
+    height: 100%;
+}
+
+/* Premium Blog Cards */
+.blog-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog-card:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced Testimonial Cards */
+.testimonial-card {
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.testimonial-card:hover::before {
+    opacity: 1;
+}
+
+/* Fancy Form Inputs */
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    border-color: transparent;
+    background: linear-gradient(white, white) padding-box,
+        var(--gradient-primary) border-box;
+    border: 2px solid transparent;
+}
+
+/* Enhanced Buttons with Shine Effect */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 0;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(45deg);
+    transition: width 0.5s ease;
+}
+
+.btn:hover::after {
+    width: 200%;
+}
+
+/* Decorative Shapes */
+.decorative-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    top: 10%;
+    right: 5%;
+    animation: float 15s infinite ease-in-out;
+}
+
+.shape-2 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    bottom: 10%;
+    left: 5%;
+    animation: float 20s infinite ease-in-out reverse;
+}
+
+/* Enhanced Icon Boxes */
+.icon-box,
+.card-icon,
+.feature-icon {
+    position: relative;
+    background: var(--gradient-primary);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.icon-box::before,
+.card-icon::before,
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.3s ease;
+}
+
+.icon-box:hover::before,
+.card-icon:hover::before,
+.feature-icon:hover::before {
+    opacity: 1;
+}
+
+/* Fancy Notification Items */
+.notification-item {
+    position: relative;
+    background: white;
+    border-left: 4px solid transparent;
+}
+
+.notification-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -4px;
+    width: 4px;
+    height: 0;
+    background: var(--gradient-primary);
+    transition: height 0.3s ease;
+}
+
+.notification-item:hover::before {
+    height: 100%;
+}
+
+/* Enhanced FAQ Items */
+.faq-item,
+.accordion-item {
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover,
+.accordion-item:hover {
+    border-left-color: var(--primary-color);
+    background: linear-gradient(to right, rgba(102, 126, 234, 0.05), white);
+}
+
+/* Premium Service Cards */
+.service-detail {
+    position: relative;
+}
+
+.service-icon {
+    background: var(--gradient-primary);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    position: relative;
+}
+
+.service-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: inherit;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease;
+}
+
+.service-icon:hover::after {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+}
+
+/* Fancy Contact Icons */
+.contact-icon {
+    background: var(--gradient-primary);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+/* Enhanced Step Items */
+.step-icon {
+    background: white;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.step-icon::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.step-item:hover .step-icon::before {
+    opacity: 1;
+}
+
+/* Animated Background Patterns */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Floating Animation for Shapes */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(30px, -30px) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(-20px, 20px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translate(20px, 30px) rotate(3deg);
+    }
+}
+
+/* Glow Effect */
+.glow-on-hover {
+    transition: all 0.3s ease;
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6),
+        0 0 40px rgba(102, 126, 234, 0.4),
+        0 0 60px rgba(102, 126, 234, 0.2);
+}
+
+/* Premium Hover Lift */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient Border Effect */
+.gradient-border {
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.gradient-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    z-index: -1;
+}

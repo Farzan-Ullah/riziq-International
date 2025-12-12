@@ -1,0 +1,186 @@
+/* ========================================
+   DESKTOP ENHANCEMENTS & PREMIUM EFFECTS
+   For screens larger than 1024px
+   ======================================== */
+
+@media (min-width: 1025px) {
+
+    /* 1. ULTRA-PREMIUM NAVIGATION
+       ======================================== */
+    .header {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-link {
+        position: relative;
+        font-weight: 500;
+        padding: 0.5rem 0;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient-primary);
+        transition: width 0.3s ease;
+        border-radius: 2px;
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+        width: 100%;
+    }
+
+    .nav-link:hover {
+        color: var(--primary-color);
+        transform: translateY(-1px);
+    }
+
+    /* 2. HERO SECTION POLISH
+       ======================================== */
+    .hero-title {
+        font-size: 4.5rem;
+        /* Larger title for desktop */
+        letter-spacing: -1px;
+    }
+
+    .hero-content {
+        max-width: 1200px;
+        /* Wider content area */
+    }
+
+    /* Parallax-like floating for orbs */
+    .orb-1 {
+        animation: floatOrb1 20s infinite ease-in-out;
+        opacity: 0.6;
+    }
+
+    .orb-2 {
+        animation: floatOrb2 25s infinite ease-in-out reverse;
+        opacity: 0.6;
+    }
+
+    @keyframes floatOrb1 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        33% {
+            transform: translate(30px, -50px) scale(1.1);
+        }
+
+        66% {
+            transform: translate(-20px, 20px) scale(0.9);
+        }
+    }
+
+    @keyframes floatOrb2 {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        33% {
+            transform: translate(-30px, 40px) scale(1.15);
+        }
+
+        66% {
+            transform: translate(25px, -30px) scale(0.95);
+        }
+    }
+
+    /* 3. ADVANCED CARD INTERACTIONS (3D Tilt-like)
+       ======================================== */
+    .card,
+    .service-card,
+    .job-card,
+    .blog-card,
+    .testimonial-card {
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+            box-shadow 0.4s ease,
+            border-color 0.4s ease;
+    }
+
+    .card:hover,
+    .service-card:hover,
+    .job-card:hover {
+        transform: translateY(-15px) perspective(1000px) rotateX(2deg);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+        z-index: 10;
+    }
+
+    /* 4. NOTIFICATION DROPDOWN (Desktop)
+       ======================================== */
+    .nav-notif-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .notif-count-badge {
+        background: var(--error-color);
+        color: white;
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 99px;
+        margin-left: 0.5rem;
+        font-weight: 700;
+        box-shadow: 0 2px 5px rgba(239, 68, 68, 0.4);
+        animation: pulse 2s infinite;
+    }
+
+    /* 5. CUSTOM SCROLLBAR
+       ======================================== */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+    }
+
+    /* 6. BUTTON GLOW EFFECTS
+       ======================================== */
+    .btn-primary,
+    .btn-accent {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-primary::after,
+    .btn-accent::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transform: rotate(45deg) translate(-100%, -100%);
+        transition: transform 0.6s ease;
+    }
+
+    .btn-primary:hover::after,
+    .btn-accent:hover::after {
+        transform: rotate(45deg) translate(100%, 100%);
+    }
+
+}
