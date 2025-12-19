@@ -321,6 +321,7 @@ section {
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-md) 0;
+ 
 }
 
 .logo {

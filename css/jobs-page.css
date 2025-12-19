@@ -122,6 +122,11 @@
     position: relative;
     overflow: hidden;
     border-left: 4px solid transparent;
+       pointer-events: auto;
+}
+
+.job-card * {
+    pointer-events: auto;
 }
 
 .job-card::before {
@@ -133,6 +138,7 @@
     height: 0;
     background: var(--jobs-gradient);
     transition: height 0.4s ease;
+     pointer-events: none;
 }
 
 .job-card:hover {
@@ -150,6 +156,7 @@
     align-items: flex-start;
     margin-bottom: 1.5rem;
 }
+
 
 .job-company {
     display: flex;
@@ -256,6 +263,9 @@
 }
 
 .job-apply-btn {
+      position: relative;
+    z-index: 10;
+    pointer-events: auto;
     padding: 0.75rem 2rem;
     background: var(--jobs-gradient);
     color: white;

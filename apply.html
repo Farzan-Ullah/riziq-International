@@ -72,7 +72,9 @@
                         opportunities</p>
                 </div>
 
-                <form id="applyForm" onsubmit="handleApplyForm(event)">
+                <form id="applyForm">
+                    <input type="hidden" id="jobId">
+<input type="hidden" id="jobTitle">
                     <div class="form-row">
                         <div class="form-group">
                             <label class="form-label">Full Name *</label>
@@ -82,7 +84,7 @@
 
                         <div class="form-group">
                             <label class="form-label">WhatsApp Number *</label>
-                            <input type="tel" name="phone" class="form-control" placeholder="+91 7006001199" required>
+                            <input type="text" name="phone" class="form-control" placeholder="+91 7006001199" required>
                         </div>
                     </div>
 
@@ -196,7 +198,7 @@
                         <label class="form-label">Upload Your CV/Resume</label>
                         <div class="file-upload">
                             <input type="file" name="cv" id="cvUpload" accept=".pdf,.doc,.docx"
-                                onchange="handleFileUpload(this)">
+                               >
                             <label for="cvUpload" class="file-upload-label">
                                 <i class="fas fa-cloud-upload-alt"></i>
                                 <span>Click to upload CV (PDF, DOC, DOCX)</span>
@@ -338,6 +340,106 @@
     </div>
 
     <script src="js/main.js"></script>
+
+    <!-- Firebase SDKs (COMPAT) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+<!-- Your Firebase init -->
+<script src="js/firebase.js"></script>
+
+<script>
+const CLOUDINARY_CLOUD_NAME = "dxcc0ghva";
+const CLOUDINARY_UPLOAD_PRESET = "cv_upload";
+
+async function uploadCVToCloudinary(file) {
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/upload`,
+    {
+      method: "POST",
+      body: formData
+    }
+  );
+
+  const data = await res.json();
+
+  if (!data.secure_url) {
+    throw new Error("Cloudinary upload failed");
+  }
+
+  return data.secure_url;
+}
+</script>
+
+<script>
+const applyForm = document.getElementById("applyForm");
+
+applyForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const user = auth.currentUser;
+  if (!user) {
+    alert("Please login to apply");
+    window.location.href = "login.html";
+    return;
+  }
+
+  const fileInput = document.getElementById("cvUpload");
+  if (!fileInput.files.length) {
+    alert("Please upload your CV");
+    return;
+  }
+
+  try {
+    // 1️⃣ Upload CV to Cloudinary
+    const cvFile = fileInput.files[0];
+    const cvUrl = await uploadCVToCloudinary(cvFile);
+
+    // 2️⃣ Save application to Firestore
+    const formData = new FormData(applyForm);
+
+    await db.collection("applications").add({
+      jobId: document.getElementById("jobId").value,
+      jobTitle: document.getElementById("jobTitle").value,
+      userId: user.uid,
+
+      fullName: formData.get("fullName"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      age: formData.get("age"),
+      height: formData.get("height"),
+      gender: formData.get("gender"),
+      qualification: formData.get("qualification"),
+      occupation: formData.get("occupation"),
+      experience: formData.get("experience"),
+      country: formData.get("country"),
+      jobType: formData.get("jobType"),
+      skills: formData.get("skills"),
+      additionalInfo: formData.get("additionalInfo"),
+
+      cvUrl, // ✅ Cloudinary URL
+      status: "pending",
+      createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    alert("✅ Application submitted successfully");
+    applyForm.reset();
+    window.location.href = "jobs.html";
+
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+});
+</script>
+
+
 </body>
 
 </html>

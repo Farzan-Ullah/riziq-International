@@ -273,35 +273,7 @@ style.textContent = `
 document.head.appendChild(style);
 
 // Job Search and Filter
-function filterJobs() {
-    const searchInput = document.getElementById('jobSearch');
-    const countryFilter = document.getElementById('countryFilter');
-    const skillFilter = document.getElementById('skillFilter');
-    const jobCards = document.querySelectorAll('.job-card');
 
-    if (!jobCards.length) return;
-
-    const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
-    const selectedCountry = countryFilter ? countryFilter.value.toLowerCase() : '';
-    const selectedSkill = skillFilter ? skillFilter.value.toLowerCase() : '';
-
-    jobCards.forEach(card => {
-        const title = card.querySelector('.job-title')?.textContent.toLowerCase() || '';
-        const country = card.querySelector('.job-country')?.textContent.toLowerCase() || '';
-        const requirements = card.querySelector('.job-requirements')?.textContent.toLowerCase() || '';
-
-        const matchesSearch = title.includes(searchTerm) || country.includes(searchTerm) || requirements.includes(searchTerm);
-        const matchesCountry = !selectedCountry || country.includes(selectedCountry);
-        const matchesSkill = !selectedSkill || requirements.includes(selectedSkill);
-
-        if (matchesSearch && matchesCountry && matchesSkill) {
-            card.style.display = 'block';
-            card.style.animation = 'fadeIn 0.5s ease-out';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
 
 // Counter Animation
 function animateCounter(element, target, duration = 2000) {
