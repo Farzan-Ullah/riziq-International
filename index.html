@@ -329,7 +329,6 @@
   <script src="js/firebase.js"></script>
 
   <script>
-    console.log("DB exists?", window.db); // should NOT be undefined
 
     function animateCounter(el, target, suffix = "+") {
       let val = 0;
@@ -345,9 +344,6 @@
         }
       }, 16);
     }
-
-    console.log("Firebase:", firebase);
-    console.log("DB:", db);
 
     db.collection("site_stats")
       .doc("main")
