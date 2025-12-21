@@ -146,31 +146,31 @@
   <!-- Success Stats -->
   <section class="stats-section">
     <div class="container">
-      <div class="grid grid-4">
-  <div class="stat-card">
-    <div class="stat-icon"><i class="fas fa-users"></i></div>
-    <div class="stat-number" id="statCandidates">0+</div>
-    <div class="stat-label">Candidates Recruited</div>
-  </div>
+      <div class="grid grid-4 stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-users"></i></div>
+          <div class="stat-number" id="statCandidates">0+</div>
+          <div class="stat-label">Candidates Recruited</div>
+        </div>
 
-  <div class="stat-card">
-    <div class="stat-icon"><i class="fas fa-building"></i></div>
-    <div class="stat-number" id="statEmployers">0+</div>
-    <div class="stat-label">Partner Employers</div>
-  </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-building"></i></div>
+          <div class="stat-number" id="statEmployers">0+</div>
+          <div class="stat-label">Partner Employers</div>
+        </div>
 
-  <div class="stat-card">
-    <div class="stat-icon"><i class="fas fa-flag"></i></div>
-    <div class="stat-number" id="statCountries">0+</div>
-    <div class="stat-label">Countries Covered</div>
-  </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-flag"></i></div>
+          <div class="stat-number" id="statCountries">0+</div>
+          <div class="stat-label">Countries Covered</div>
+        </div>
 
-  <div class="stat-card">
-    <div class="stat-icon"><i class="fas fa-star"></i></div>
-    <div class="stat-number" id="statSuccess">0+</div>
-    <div class="stat-label">Success Rate %</div>
-  </div>
-</div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-star"></i></div>
+          <div class="stat-number" id="statSuccess">0+</div>
+          <div class="stat-label">Success Rate %</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -320,59 +320,48 @@
   <script src="js/main.js"></script>
   <script src="js/mobile.js"></script>
 
+  <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 
+  <!-- Firebase Init (defines db) -->
   <script src="js/firebase.js"></script>
 
   <script>
+    console.log("DB exists?", window.db); // should NOT be undefined
 
+    function animateCounter(el, target, suffix = "+") {
+      let val = 0;
+      const step = Math.ceil(target / 60);
 
-  function animateCounter(el, target, suffix = "+") {
-    let start = 0;
-    const duration = 1500;
-    const step = Math.ceil(target / (duration / 16));
+      const timer = setInterval(() => {
+        val += step;
+        if (val >= target) {
+          el.innerText = target + suffix;
+          clearInterval(timer);
+        } else {
+          el.innerText = val + suffix;
+        }
+      }, 16);
+    }
 
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
-        el.innerText = target + suffix;
-        clearInterval(timer);
-      } else {
-        el.innerText = start + suffix;
-      }
-    }, 16);
-  }
+    console.log("Firebase:", firebase);
+    console.log("DB:", db);
 
-  db.collection("site_stats")
-    .doc("main")
-    .onSnapshot((doc) => {
-      if (!doc.exists) return;
+    db.collection("site_stats")
+      .doc("main")
+      .onSnapshot((doc) => {
+        if (!doc.exists) return;
 
-      const data = doc.data();
+        const d = doc.data();
 
-      animateCounter(
-        document.getElementById("statCandidates"),
-        data.candidates
-      );
-
-      animateCounter(
-        document.getElementById("statEmployers"),
-        data.employers
-      );
-
-      animateCounter(
-        document.getElementById("statCountries"),
-        data.countries
-      );
-
-      animateCounter(
-        document.getElementById("statSuccess"),
-        data.successRate,
-        "%"
-      );
-    });
-</script>
+        animateCounter(document.getElementById("statCandidates"), d.candidates);
+        animateCounter(document.getElementById("statEmployers"), d.employers);
+        animateCounter(document.getElementById("statCountries"), d.countries);
+        animateCounter(document.getElementById("statSuccess"), d.successRate, "%");
+      });
+  </script>
 
   <script>
     const loginLink = document.getElementById("loginLink");

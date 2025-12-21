@@ -12,6 +12,10 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Firebase services (GLOBAL)
-const auth = firebase.auth();
-const db = firebase.firestore();
-const storage = firebase.storage();
+// const auth = firebase.auth();
+// const db = firebase.firestore();
+// const storage = firebase.storage();
+
+// ✅ Make these GLOBAL
+window.auth = firebase.auth();
+window.db = firebase.firestore();
