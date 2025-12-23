@@ -519,8 +519,11 @@ function initNotifications() {
     updateBadge();
 }
 
-document.addEventListener('DOMContentLoaded', initNotifications);
+const ENABLE_NOTIFICATIONS = false;
 
+if (ENABLE_NOTIFICATIONS) {
+  document.addEventListener('DOMContentLoaded', initNotifications);
+}
 // -----------------------------
 // Blog helper: ensure blog page shows (no-op if static content exists)
 // -----------------------------

@@ -358,9 +358,10 @@ async function uploadCVToCloudinary(file) {
   const formData = new FormData();
   formData.append("file", file);
   formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+   formData.append("resource_type", "raw");
 
   const res = await fetch(
-    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/upload`,
+    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/raw/upload`,
     {
       method: "POST",
       body: formData
@@ -368,6 +369,8 @@ async function uploadCVToCloudinary(file) {
   );
 
   const data = await res.json();
+
+   console.log("Cloudinary response:", data);
 
   if (!data.secure_url) {
     throw new Error("Cloudinary upload failed");
@@ -379,6 +382,24 @@ async function uploadCVToCloudinary(file) {
 
 <script>
 const applyForm = document.getElementById("applyForm");
+const urlParams = new URLSearchParams(window.location.search);
+const jobId = urlParams.get("jobId");
+
+let selectedJob = null;
+
+if (jobId) {
+  db.collection("jobs").doc(jobId).get().then(doc => {
+    if (doc.exists) {
+      selectedJob = { id: doc.id, ...doc.data() };
+
+      // ✅ Set hidden inputs (IMPORTANT)
+      document.getElementById("jobId").value = selectedJob.id;
+      document.getElementById("jobTitle").value = selectedJob.title;
+
+      console.log("Selected Job:", selectedJob);
+    }
+  });
+}
 
 applyForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -405,28 +426,31 @@ applyForm.addEventListener("submit", async (e) => {
     const formData = new FormData(applyForm);
 
     await db.collection("applications").add({
-      jobId: document.getElementById("jobId").value,
-      jobTitle: document.getElementById("jobTitle").value,
-      userId: user.uid,
+  // 🔥 Job linkage
+  jobId: selectedJob?.id || null,
+  jobTitle: selectedJob?.title || "General Application",
+  jobLocation: selectedJob?.location || "-",
 
-      fullName: formData.get("fullName"),
-      phone: formData.get("phone"),
-      email: formData.get("email"),
-      age: formData.get("age"),
-      height: formData.get("height"),
-      gender: formData.get("gender"),
-      qualification: formData.get("qualification"),
-      occupation: formData.get("occupation"),
-      experience: formData.get("experience"),
-      country: formData.get("country"),
-      jobType: formData.get("jobType"),
-      skills: formData.get("skills"),
-      additionalInfo: formData.get("additionalInfo"),
+  // Applicant details
+  fullName: formData.get("fullName"),
+  phone: formData.get("phone"),
+  email: formData.get("email"),
+  age: formData.get("age"),
+  height: formData.get("height"),
+  gender: formData.get("gender"),
+  qualification: formData.get("qualification"),
+  occupation: formData.get("occupation"),
+  experience: formData.get("experience"),
+  country: formData.get("country"),
+  jobType: formData.get("jobType"),
+  skills: formData.get("skills"),
+  additionalInfo: formData.get("additionalInfo"),
 
-      cvUrl, // ✅ Cloudinary URL
-      status: "pending",
-      createdAt: firebase.firestore.FieldValue.serverTimestamp()
-    });
+  cvUrl,
+  status: "pending",
+
+  createdAt: firebase.firestore.FieldValue.serverTimestamp()
+});
 
     alert("✅ Application submitted successfully");
     applyForm.reset();
